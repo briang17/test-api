@@ -2,17 +2,9 @@ version: "3"
 
 services:
     node-test:
-        image: node:lts-bookworm-slim
-        container_name: node-test
+        build: .
+        container_name: test-api
         restart: on-failure
-
-        working_dir: /app
-
-        volumes:
-            - ./:/app
-
-        command: sh -c "cd .. && cd app && ls"
-
         networks:
             - proxy_net
 
