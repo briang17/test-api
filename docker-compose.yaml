@@ -11,7 +11,7 @@ services:
         volumes:
             - ./:/app
 
-        command: sh -c "cd .. && ls"
+        command: sh -c "cd .. && cd app && ls"
 
         networks:
             - proxy_net
