@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+    node-test:
+        image: node:lts-bookworm-slim
+        container_name: node-test
+        restart: on-failure
+
+        working_dir: /app
+
+        volumes:
+            - ./:/app
+
+        command: sh -c "npm install && npm start"
+
+        networks:
+            - proxy_net
+
+networks:
+    proxy_net:
+        external: true
