@@ -14,5 +14,13 @@ app.listen(PORT, () => {
 app.post("/data", (req, res) => {
     const data = req.body;
     console.log(Object.keys(data));
+    for (const key in data) {
+        console.log(key, data[key]);
+        if (Array.isArray(data[key])) {
+            console.log(data[key][0]);
+        } else {
+            console.log(data[key]);
+        }
+    }
     res.status(200).send("Data received");
 });
