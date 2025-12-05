@@ -14,6 +14,7 @@ app.listen(PORT, () => {
 app.post("/data", (req, res) => {
     const data = req.body;
     console.log(Object.keys(data));
+    /*
     for (const key in data) {
         if (Array.isArray(data[key])) {
             console.log(key, data[key]);
@@ -21,5 +22,9 @@ app.post("/data", (req, res) => {
             console.log(key, data[key][0]);
         }
     }
+     */
+    console.log(data.headers);
+    console.log("is headers array", Array.isArray(data.headers));
+    console.log("type of headers", typeof data.headers);
     res.status(200).send("Data received");
 });
