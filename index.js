@@ -16,9 +16,9 @@ app.post("/data", (req, res) => {
     console.log(Object.keys(data));
     for (const key in data) {
         if (Array.isArray(data[key])) {
-            console.log(key, data[key][0]);
-        } else {
             console.log(key, data[key]);
+        } else {
+            console.log(key, data[key][0]);
         }
     }
     res.status(200).send("Data received");
