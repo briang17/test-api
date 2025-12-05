@@ -13,6 +13,6 @@ app.listen(PORT, () => {
 
 app.post("/data", (req, res) => {
     const data = req.body;
-    console.log(data);
+    console.log(Object.keys(data));
     res.status(200).send("Data received");
 });
